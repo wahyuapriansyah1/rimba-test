@@ -57,7 +57,6 @@ php artisan schedule:work
 - staff@example.com / password
 
 ## Screenshot
-Silakan tambahkan screenshot hasil login, dashboard, dan fitur utama di bawah ini:
 
 ![Login Page](screenshots/login.png)
 ![Dashboard](screenshots/dashboard.png)
