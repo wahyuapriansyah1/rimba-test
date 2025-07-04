@@ -73,7 +73,7 @@ php artisan schedule:work
 - .env.example, README.md
 
 ## Author
-- (Nama Anda)
+- Wahyu Apriansah
 
 ---
 
