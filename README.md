@@ -31,7 +31,7 @@
    ```
 4. Akses frontend di `public/frontend/index.html`
 
-## ERD (Singkat)
+## ERD 
 - User: id(UUID), name, email, password, role, status, email_verified_at
 - Task: id(UUID), title, description, assigned_to, status, due_date, created_by
 - ActivityLog: id(UUID), user_id, action, description, logged_at
