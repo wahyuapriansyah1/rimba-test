@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - Rimba Ananta Vikasa</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+<div id="app" class="container py-5">
+    <!-- Login Form -->
+    <div id="login-section" class="row justify-content-center">
+        <div class="col-md-4">
+            <div class="card">
+                <div class="card-header">Login</div>
+                <div class="card-body">
+                    <form id="login-form">
+                        <div class="mb-3">
+                            <label for="email" class="form-label">Email</label>
+                            <input type="email" class="form-control" id="email" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="password" class="form-label">Password</label>
+                            <input type="password" class="form-control" id="password" required>
+                        </div>
+                        <button type="submit" class="btn btn-primary w-100">Login</button>
+                        <div id="login-error" class="text-danger mt-2"></div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Dashboard Section (hidden by default) -->
+    <div id="dashboard-section" class="d-none">
+        <div class="d-flex justify-content-between align-items-center mb-4">
+            <h2>Task Dashboard</h2>
+            <button id="logout-btn" class="btn btn-outline-danger">Logout</button>
+        </div>
+        <div id="user-info" class="mb-3"></div>
+        <div id="admin-section" class="mb-4 d-none">
+            <h4>Admin: Create User</h4>
+            <form id="create-user-form" class="row g-2 align-items-end">
+                <div class="col-md-2">
+                    <input type="text" class="form-control" id="new-user-name" placeholder="Name" required>
+                </div>
+                <div class="col-md-3">
+                    <input type="email" class="form-control" id="new-user-email" placeholder="Email" required>
+                </div>
+                <div class="col-md-2">
+                    <input type="password" class="form-control" id="new-user-password" placeholder="Password" required>
+                </div>
+                <div class="col-md-2">
+                    <select class="form-select" id="new-user-role" required>
+                        <option value="">Role</option>
+                        <option value="admin">Admin</option>
+                        <option value="manager">Manager</option>
+                        <option value="staff">Staff</option>
+                    </select>
+                </div>
+                <div class="col-md-2">
+                    <select class="form-select" id="new-user-status" required>
+                        <option value="1">Active</option>
+                        <option value="0">Inactive</option>
+                    </select>
+                </div>
+                <div class="col-md-1">
+                    <button type="submit" class="btn btn-success">Create</button>
+                </div>
+            </form>
+            <div id="user-create-error" class="text-danger mt-2"></div>
+        </div>
+        <div id="user-list-section" class="mb-4 d-none">
+            <h4>User List</h4>
+            <table class="table table-bordered" id="user-list-table">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Email</th>
+                        <th>Role</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+        </div>
+        <div class="mb-4">
+            <h4>Tasks</h4>
+            <button class="btn btn-primary mb-2" id="show-task-form">+ New Task</button>
+            <form id="create-task-form" class="row g-2 align-items-end d-none">
+                <div class="col-md-3">
+                    <input type="text" class="form-control" id="task-title" placeholder="Title" required>
+                </div>
+                <div class="col-md-3">
+                    <input type="text" class="form-control" id="task-desc" placeholder="Description">
+                </div>
+                <div class="col-md-2">
+                    <input type="date" class="form-control" id="task-due" required>
+                </div>
+                <div class="col-md-2">
+                    <select class="form-select" id="task-assigned-to"></select>
+                </div>
+                <div class="col-md-2">
+                    <button type="submit" class="btn btn-success">Create Task</button>
+                </div>
+            </form>
+            <div id="task-create-error" class="text-danger mt-2"></div>
+            <table class="table table-bordered" id="task-list-table">
+                <thead>
+                    <tr>
+                        <th>Title</th>
+                        <th>Description</th>
+                        <th>Status</th>
+                        <th>Due Date</th>
+                        <th>Assigned To</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+        </div>
+    </div>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
